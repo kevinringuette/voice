@@ -132,7 +132,9 @@ def apply_llm_actions(actions: Dict[str, Any]):
     current = st.session_state.current_student
     if not current: return
     for upd in actions.get("updates", []) or []:
-        cat = upd.get("category"); if not cat: continue
+        cat = upd.get("category")
+        if not cat:
+            continue
         if cat in st.session_state.locks[current]: continue
         max_pts = rubric_max_for(cat)
         if upd.get("score") is not None:
