@@ -1,0 +1,7 @@
+streamlit==1.38.0
+streamlit-webrtc==0.47.6
+openai>=1.30.0
+numpy
+pandas
+requests
+av
